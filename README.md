@@ -1,2 +1,2 @@
 # gohome
-python启动TeamViewer
+python用定时任务启动TeamViewer
