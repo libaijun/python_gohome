@@ -34,7 +34,7 @@ def start_process():
         logger.info("%s 程序【%s】已启动, pid = %d " % (detail_now(), config['process_name'], flag))
     else:
         logger.info("%s 程序【%s】未启动, 启动之" % (detail_now(), config['process_name']))
-        os.startfile(config['process_path'])
+        os.startfile(config['process_path'])   # windows特有的命令
 
 
 def detail_now():

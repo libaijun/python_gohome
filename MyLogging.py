@@ -11,7 +11,10 @@ class MyLogging:
     def __init__(self):
         time_str = datetime.now().strftime('%Y-%m-%d')
 
-        lib_path = os.path.abspath(os.path.join(os.path.dirname(__file__), './logs'))
+        cwd = os.getcwd().split("/")
+        project_name = cwd[len(cwd) - 1]
+
+        lib_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../logs/', project_name))
 
         exists = os.path.exists(lib_path)
         if not exists:
