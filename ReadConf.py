@@ -17,3 +17,9 @@ print(db['host'])
 print(db['port'])
 print(db['username'])
 print(db['password'])
+
+
+mongo = config['mongo']
+print(mongo['host'])
+print(mongo['port'])
+
