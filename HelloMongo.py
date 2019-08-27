@@ -42,8 +42,15 @@ def update(col, con, stu):
     return result
 
 
+# 删除一个
 def delete(col, con):
     result = col.delete_one(con)
+    return result
+
+
+# 删除多个
+def delete_many(col, con):
+    result = col.delete_many(con)
     return result
 
 
@@ -51,7 +58,7 @@ if __name__ == '__main__':
     collection = get_collection('testdb', 'students');
     # 插入
     student = {
-        'id': '20170104',
+        'id': '20170106',
         'name': '徐小凤',
         'age': 62,
         'gender': 'female',
@@ -73,5 +80,10 @@ if __name__ == '__main__':
     # print(update_result)
 
     # 删除
-    delete1 = delete(collection, condition)
-    print(delete1)
+    # delete1 = delete(collection, condition)
+    # print(delete1)
+
+    # 批量删除-->删除大于60岁
+    con = {'age': {'$gt': 60}}
+    many = delete_many(collection, con)
+    print(many)
